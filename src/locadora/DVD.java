@@ -34,17 +34,7 @@ public class DVD implements Alugavel {
     }
 
     public void setCodigoDePreco(int codigoDePreco) {
-        switch(codigoDePreco) {
-            case 0:
-                this.classificacao = new ClassificacaoNormal();
-                break;
-            case 1:
-                this.classificacao = new ClassificacaoLancamento();
-                break;
-            case 2:
-                this.classificacao = new ClassificacaoInfantil();
-                break;
-        }
+        this.classificacao = ClassificationFactory.create(codigoDePreco);
 
     }
 
