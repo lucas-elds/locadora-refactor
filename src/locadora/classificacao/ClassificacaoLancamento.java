@@ -5,7 +5,7 @@ import locadora.DVD;
 public class ClassificacaoLancamento extends Classificacao {
     @Override
     public int getCodigoDePreco() {
-        return 1;
+        return Classificacao.LANCAMENTO;
     }
 
     @Override

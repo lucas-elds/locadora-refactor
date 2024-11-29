@@ -3,7 +3,7 @@ package locadora.classificacao;
 public class ClassificacaoInfantil extends Classificacao {
     @Override
     public int getCodigoDePreco() {
-        return 2;
+        return Classificacao.INFANTIL;
     }
 
     @Override
