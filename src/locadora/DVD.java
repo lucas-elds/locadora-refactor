@@ -2,9 +2,7 @@ package locadora;
 
 
 import locadora.classificacao.Classificacao;
-import locadora.classificacao.ClassificacaoInfantil;
-import locadora.classificacao.ClassificacaoLancamento;
-import locadora.classificacao.ClassificacaoNormal;
+import locadora.classificacao.ClassificationFactory;
 
 public class DVD implements Alugavel {
 
@@ -35,7 +33,5 @@ public class DVD implements Alugavel {
 
     public void setCodigoDePreco(int codigoDePreco) {
         this.classificacao = ClassificationFactory.create(codigoDePreco);
-
     }
-
 }
