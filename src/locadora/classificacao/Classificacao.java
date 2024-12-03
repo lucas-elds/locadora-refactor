@@ -10,4 +10,7 @@ public abstract class Classificacao {
     public int getPAF(int diasAlugado) {
         return 1;
     }
+    public boolean isNull(){
+        return false;
+    };
 }

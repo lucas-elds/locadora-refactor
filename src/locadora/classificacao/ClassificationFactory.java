@@ -6,7 +6,7 @@ public class ClassificationFactory {
             case Classificacao.NORMAL -> new ClassificacaoNormal();
             case Classificacao.LANCAMENTO -> new ClassificacaoLancamento();
             case Classificacao.INFANTIL -> new ClassificacaoInfantil();
-            default -> null;
+            default -> new ClassificacaoNula();
         };
     }
 }

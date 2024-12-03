@@ -19,6 +19,10 @@ public class DVD implements Alugavel {
         return titulo;
     }
 
+    public Classificacao getClassificacao() {
+        return classificacao;
+    }
+
     public double getValorDoAluguel(int diasAlugado) {
         return classificacao.getValorDoAluguel(diasAlugado);
     }

@@ -33,6 +33,9 @@ public class Cliente {
         String resultado = "Registro de Alugueis de " + getNome() + System.lineSeparator();
 
         for (Aluguel a: listaAlugueis) {
+            if(a.getItem().getClassificacao().isNull()){
+                continue;
+            }
             resultado += "\t" + a.getItem().getTitulo() + "\t R$ " + a.valor() + System.lineSeparator();
             pontosTotais += a.getItem().getPAF(a.getDiasAlugado());
         }

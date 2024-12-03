@@ -22,6 +22,7 @@ public class Locadora {
         c1.adicionaAluguel(new Aluguel(new DVD("Arremessando Alto", Classificacao.LANCAMENTO), 4));
         c1.adicionaAluguel(new Aluguel(new DVD("Moana", Classificacao.INFANTIL), 10));
         c1.adicionaAluguel(new Aluguel(new DVD("Uma Noite no Museu", Classificacao.NORMAL), 3));
+        c1.adicionaAluguel(new Aluguel(new DVD("Ainda Estou Aqui", 4), 3));
 
         System.out.println(c1.extrato());
     }
