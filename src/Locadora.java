@@ -3,6 +3,9 @@ import locadora.Cliente;
 import locadora.Aluguel;
 import locadora.DVD;
 import locadora.classificacao.Classificacao;
+import locadora.extrato.Extrato;
+import locadora.extrato.ExtratoConsole;
+import locadora.extrato.ExtratoHTML;
 //********** import para executar o código conforme modificações da lista01.2.2-GRASP-refactoring
 //import refactoring1.Cliente;
 //************************************************************************************************
@@ -24,6 +27,7 @@ public class Locadora {
         c1.adicionaAluguel(new Aluguel(new DVD("Uma Noite no Museu", Classificacao.NORMAL), 3));
         c1.adicionaAluguel(new Aluguel(new DVD("Ainda Estou Aqui", 4), 3));
 
-        System.out.println(c1.extrato());
+        Extrato extrato = new ExtratoHTML();
+        System.out.println(c1.extrato(extrato));
     }
 }

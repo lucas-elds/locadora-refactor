@@ -3,7 +3,7 @@ package locadora.classificacao;
 public class ClassificacaoNula extends Classificacao {
 
     public int getCodigoDePreco(){
-        return 404;
+        return -1;
     };
     public double getValorDoAluguel(int diasAlugado){
         return 0.0;

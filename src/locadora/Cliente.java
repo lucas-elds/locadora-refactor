@@ -1,5 +1,7 @@
 package locadora;
 
+import locadora.extrato.Extrato;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -28,37 +30,17 @@ public class Cliente {
         return valorTotal;
     }
 
-    public String extrato() {
+    public int getTotalPAF() {
         int pontosTotais = 0;
-        String resultado = "Registro de Alugueis de " + getNome() + System.lineSeparator();
-
-        for (Aluguel a: listaAlugueis) {
-            if(a.getItem().getClassificacao().isNull()){
-                continue;
-            }
-            resultado += "\t" + a.getItem().getTitulo() + "\t R$ " + a.valor() + System.lineSeparator();
+        for (Aluguel a : listaAlugueis) {
             pontosTotais += a.getItem().getPAF(a.getDiasAlugado());
         }
-        // adiciona rodapé7
-        resultado += "Valor total pago: R$ " + getValorTotal() + System.lineSeparator();
-        resultado += "Voce acumulou " + pontosTotais + " pontos de alugador frequente";
-
-        return resultado;
+        return pontosTotais;
     }
 
-    public String extratoHTML() {
-        final String fimDeLinha = System.lineSeparator();
-        Iterator<Aluguel> alugueis = listaAlugueis.iterator();
-        String resultado = "<H1>Registro de Alugueis de <EM>" + getNome() + "</EM></H1><P>" + fimDeLinha;
-        while(alugueis.hasNext()) {
-            Aluguel cada = alugueis.next();
-            // mostra valores para este aluguel
-            resultado += cada.getItem().getTitulo() + ": R$ " + cada.valor() + "<BR>"+ fimDeLinha;
-        } // while
-        // adiciona rodapé
-        resultado += "<P>Valor total pago: <EM>R$ " + getValorTotal() + "</EM>"+ fimDeLinha;
-        //resultado += "<P>Voce acumulou <EM>" + pontosTotais + " pontos </EM> de alugador frequente";
-        return resultado;
+    public String extrato(Extrato extrato) {
+        return extrato.emitirExtrato(nome, listaAlugueis, getValorTotal(), getTotalPAF());
     }
+
 }
 

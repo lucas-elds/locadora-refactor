@@ -1,6 +1,6 @@
 package locadora.classificacao;
 
-public class ClassificationFactory {
+public class ClassificacaoFactory {
     public static Classificacao create(int codigoDeClassificacao) {
         return switch (codigoDeClassificacao) {
             case Classificacao.NORMAL -> new ClassificacaoNormal();
